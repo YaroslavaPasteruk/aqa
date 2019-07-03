@@ -15,10 +15,15 @@ public class LoginTest {
 				+ File.separator + "chromedriver_win32" + File.separator + "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
-		
+
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
+
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println("User is loged in and navigated to " + currentUrl);
+		
+
 	}
 
 }
