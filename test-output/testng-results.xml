@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4552" started-at="2019-07-03T18:43:57Z" finished-at="2019-07-03T18:44:02Z">
+  <suite name="Default suite" duration-ms="8824" started-at="2019-07-03T20:06:35Z" finished-at="2019-07-03T20:06:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4552" started-at="2019-07-03T18:43:57Z" finished-at="2019-07-03T18:44:02Z">
+    <test name="Default test" duration-ms="8824" started-at="2019-07-03T20:06:35Z" finished-at="2019-07-03T20:06:44Z">
       <class name="tests.LoginTest">
-        <test-method status="PASS" signature="testUserIsAbleToLoginIntoApp()[pri:0, instance:tests.LoginTest@51565ec2]" name="testUserIsAbleToLoginIntoApp" duration-ms="4522" started-at="2019-07-03T21:43:57Z" finished-at="2019-07-03T21:44:02Z">
+        <test-method status="PASS" signature="testUserIsAbleToLoginIntoApp()[pri:0, instance:tests.LoginTest@51565ec2]" name="testUserIsAbleToLoginIntoApp" duration-ms="8800" started-at="2019-07-03T23:06:35Z" finished-at="2019-07-03T23:06:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUserIsAbleToLoginIntoApp -->

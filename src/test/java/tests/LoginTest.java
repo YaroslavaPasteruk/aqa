@@ -21,8 +21,9 @@ public class LoginTest {
 		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
 
 		String currentUrl = driver.getCurrentUrl();
-		System.out.println("User is loged in and navigated to " + currentUrl);
-		
+		if (currentUrl.contentEquals("https://www.saucedemo.com/inventory.html")) {
+			System.out.println("User is loged in and redirected to " + currentUrl);
+		}
 
 	}
 
