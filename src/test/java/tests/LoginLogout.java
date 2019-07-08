@@ -1,5 +1,4 @@
 package tests;
-
 import java.io.File;
 
 import org.openqa.selenium.By;
@@ -11,11 +10,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class LoginTest {
-	private WebDriver driver = null;
-
+public class LoginLogout {
+private WebDriver driver = null;
+	
 	@Test
-	public void testUserIsAbleToLoginIntoApp() {
+	public void testUserLoginLogout() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers"
 				+ File.separator + "chromedriver_win32" + File.separator + "chromedriver.exe");
 		this.driver = new ChromeDriver();
@@ -24,27 +23,15 @@ public class LoginTest {
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
-
-		WebElement el = driver.findElement(By.id("shopping_cart_container"));
-
-		SoftAssert soft = new SoftAssert();
-
-		soft.assertTrue(driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html"),
-				"Current URL after login should be 'https://www.saucedemo.com/inventory.html' + but found ["
-						+ driver.getCurrentUrl() + "] ");
-		soft.assertTrue(el.isDisplayed());
-		soft.assertAll();
-
-//		String currentUrl = driver.getCurrentUrl();
-//		if (currentUrl.contentEquals("https://www.saucedemo.com/inventory.html")) {
-//			System.out.println("User is loged in and redirected to " + currentUrl);
-//		}
-
+		driver.findElement(By.cssSelector("div.bm-burger-button button")).click();
+		driver.findElement(By.id("logout_sidebar_link")).click();
+		driver.getCurrentUrl();
+		
+		Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/index.html");
+		
 	}
-
 	@AfterClass(alwaysRun = true)
 	public void closeBrowser() {
 		driver.quit();
 	}
-
 }

@@ -11,40 +11,28 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class LoginTest {
+public class LoginWithoutUserNameTest {
 	private WebDriver driver = null;
-
+	
 	@Test
-	public void testUserIsAbleToLoginIntoApp() {
+	public void testUserNameCanNotBeEmpty() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers"
 				+ File.separator + "chromedriver_win32" + File.separator + "chromedriver.exe");
 		this.driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
 
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
+		driver.findElement(By.id("user-name")).sendKeys("");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
-
-		WebElement el = driver.findElement(By.id("shopping_cart_container"));
-
-		SoftAssert soft = new SoftAssert();
-
-		soft.assertTrue(driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html"),
-				"Current URL after login should be 'https://www.saucedemo.com/inventory.html' + but found ["
-						+ driver.getCurrentUrl() + "] ");
-		soft.assertTrue(el.isDisplayed());
-		soft.assertAll();
-
-//		String currentUrl = driver.getCurrentUrl();
-//		if (currentUrl.contentEquals("https://www.saucedemo.com/inventory.html")) {
-//			System.out.println("User is loged in and redirected to " + currentUrl);
-//		}
-
+		driver.findElement(By.xpath(".//*[text()='Username is required']"));
+		
+		WebElement userNameError = driver.findElement(By.xpath(".//*[text()='Username is required']"));
+		
+		Assert.assertTrue(userNameError.isDisplayed());
+		Assert.assertEquals(userNameError.getText(), "Epic sadface: Username is required");
 	}
-
 	@AfterClass(alwaysRun = true)
 	public void closeBrowser() {
 		driver.quit();
 	}
-
 }
