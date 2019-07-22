@@ -11,28 +11,29 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class LoginWithoutUserNameTest {
-	private WebDriver driver = null;
+import pages.LoginPage;
+
+public class LoginWithoutUserNameTest extends GenericTest{
+	
 	
 	@Test
 	public void testUserNameCanNotBeEmpty() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers"
-				+ File.separator + "chromedriver_win32" + File.separator + "chromedriver.exe");
-		this.driver = new ChromeDriver();
-		driver.get("https://www.saucedemo.com/");
+		
 
-		driver.findElement(By.id("user-name")).sendKeys("");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
+//		driver.findElement(By.id("user-name")).sendKeys("");
+//		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+//		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
+		
+		LoginPage loginPage = openLoginPage().fillInUserCredentials("","secret_sauce");
+//		loginPage.loginAs("", "secret_sauce");
+		
 		driver.findElement(By.xpath(".//*[text()='Username is required']"));
 		
 		WebElement userNameError = driver.findElement(By.xpath(".//*[text()='Username is required']"));
 		
-		Assert.assertTrue(userNameError.isDisplayed());
+		Assert.assertTrue(loginPage.isErrorShown(), 
+				"User should be logged into app after entering correct credentials");
 		Assert.assertEquals(userNameError.getText(), "Epic sadface: Username is required");
 	}
-	@AfterClass(alwaysRun = true)
-	public void closeBrowser() {
-		driver.quit();
-	}
+	
 }
