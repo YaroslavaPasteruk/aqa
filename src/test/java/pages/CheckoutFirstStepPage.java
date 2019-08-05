@@ -25,13 +25,16 @@ public class CheckoutFirstStepPage {
 	private WebElement continueButton;
 	
 	public CheckoutSecondStepPage enterPersonalData(String firstName, String lastName, String postalCode) {
+		fillInPersonalData(firstName, lastName, postalCode);
+		return new CheckoutSecondStepPage(pageDriver);
+	}
+	public CheckoutSecondStepPage fillInPersonalData(String firstName, String lastName, String postalCode) {
 		firstNameField.sendKeys(firstName);
 		lastNameField.sendKeys(lastName);
 		postalCodeField.sendKeys(postalCode);
 		continueButton.click();
 		return new CheckoutSecondStepPage(pageDriver);
 	}
-	
 	
 
 }

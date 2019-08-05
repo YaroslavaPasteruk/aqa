@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Login tests]" parallel="tests">
+  <test thread-count="5" name="Sorting functionality(failed)" parallel="tests">
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="testUserIsAbleToLoginIntoApp"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- Sorting functionality(failed) -->
+  <test thread-count="5" name="Possibility to by product(failed)" parallel="tests">
+    <classes>
+      <class name="tests.ThreeProductsCheckout">
+        <methods>
+          <include name="userIsAbleToByFewProducts"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- tests.ThreeProductsCheckout -->
+    </classes>
+  </test> <!-- Possibility to by product(failed) -->
+  <test thread-count="5" name="Success login(failed)" parallel="tests">
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="testUserIsAbleToLoginIntoApp"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- Success login(failed) -->
+  <test thread-count="5" name="Possibility to add product to cart(failed)" parallel="tests">
+    <classes>
+      <class name="tests.ThreeProductsCheckout">
+        <methods>
+          <include name="userIsAbleToByFewProducts"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- tests.ThreeProductsCheckout -->
+      <class name="tests.OneProduct">
+        <methods>
+          <include name="testUserIsAbleToByAProduct"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- tests.OneProduct -->
+    </classes>
+  </test> <!-- Possibility to add product to cart(failed) -->
+</suite> <!-- Failed suite [Login tests] -->

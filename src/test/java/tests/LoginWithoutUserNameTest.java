@@ -12,28 +12,19 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import pages.LoginPage;
+import pages.ProductsPage;
 
-public class LoginWithoutUserNameTest extends GenericTest{
-	
-	
+public class LoginWithoutUserNameTest extends GenericTest {
+
 	@Test
 	public void testUserNameCanNotBeEmpty() {
-		
 
-//		driver.findElement(By.id("user-name")).sendKeys("");
-//		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-//		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
-		
-		LoginPage loginPage = openLoginPage().fillInUserCredentials("","secret_sauce");
-//		loginPage.loginAs("", "secret_sauce");
-		
-		driver.findElement(By.xpath(".//*[text()='Username is required']"));
-		
-		WebElement userNameError = driver.findElement(By.xpath(".//*[text()='Username is required']"));
-		
-		Assert.assertTrue(loginPage.isErrorShown(), 
-				"User should be logged into app after entering correct credentials");
-		Assert.assertEquals(userNameError.getText(), "Epic sadface: Username is required");
+		LoginPage emptyUsernameLogin = openLoginPage().fillInUserCredentials("", "secret_sauce");
+
+		Assert.assertTrue(emptyUsernameLogin.getErrorMessage().equals("Epic sadface: Username is required"),
+				"Error message for login without Username should be 'Epic sadface: Username is required' + but found ["
+						+ emptyUsernameLogin.getErrorMessage() + "] ");
+
 	}
-	
+
 }

@@ -11,7 +11,7 @@ public class CheckoutSecondStepPage {
 		this.pageDriver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "xpath=//a[contains(text(),'FINISH')]")
+	@FindBy(xpath = "//a[contains(text(),'FINISH')]")
 	private WebElement finishButton;
 	
 	public ThankYouPage checkoutSuccessfull() {

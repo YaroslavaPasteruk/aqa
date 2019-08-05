@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Login tests" duration-ms="13024" started-at="2019-08-02T19:17:45Z" finished-at="2019-08-02T19:17:58Z">
+    <groups>
+    </groups>
+    <test name="Fields velification" duration-ms="12023" started-at="2019-08-02T19:17:45Z" finished-at="2019-08-02T19:17:57Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="testUserIsAbleToLoginIntoApp()[pri:0, instance:tests.LoginTest@55795845]" name="testUserIsAbleToLoginIntoApp" duration-ms="9499" started-at="2019-08-02T19:17:46Z" finished-at="2019-08-02T19:17:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserIsAbleToLoginIntoApp -->
+        <test-method status="PASS" signature="attachScreenshot()[pri:0, instance:tests.LoginTest@55795845]" name="attachScreenshot" is-config="true" duration-ms="1310" started-at="2019-08-02T19:17:55Z" finished-at="2019-08-02T19:17:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshot -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:tests.LoginTest@55795845]" name="closeApp" is-config="true" duration-ms="710" started-at="2019-08-02T19:17:57Z" finished-at="2019-08-02T19:17:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Fields velification -->
+    <test name="Sorting functionality" duration-ms="12447" started-at="2019-08-02T19:17:45Z" finished-at="2019-08-02T19:17:58Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="testUserIsAbleToLoginIntoApp()[pri:0, instance:tests.LoginTest@165b8a71]" name="testUserIsAbleToLoginIntoApp" duration-ms="10265" started-at="2019-08-02T19:17:46Z" finished-at="2019-08-02T19:17:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserIsAbleToLoginIntoApp -->
+        <test-method status="PASS" signature="attachScreenshot()[pri:0, instance:tests.LoginTest@165b8a71]" name="attachScreenshot" is-config="true" duration-ms="1421" started-at="2019-08-02T19:17:56Z" finished-at="2019-08-02T19:17:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshot -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:tests.LoginTest@165b8a71]" name="closeApp" is-config="true" duration-ms="657" started-at="2019-08-02T19:17:57Z" finished-at="2019-08-02T19:17:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Sorting functionality -->
+    <test name="Success login" duration-ms="13024" started-at="2019-08-02T19:17:45Z" finished-at="2019-08-02T19:17:58Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="testUserIsAbleToLoginIntoApp()[pri:0, instance:tests.LoginTest@64beebb7]" name="testUserIsAbleToLoginIntoApp" duration-ms="9390" started-at="2019-08-02T19:17:46Z" finished-at="2019-08-02T19:17:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserIsAbleToLoginIntoApp -->
+        <test-method status="PASS" signature="attachScreenshot()[pri:0, instance:tests.LoginTest@64beebb7]" name="attachScreenshot" is-config="true" duration-ms="2310" started-at="2019-08-02T19:17:55Z" finished-at="2019-08-02T19:17:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshot -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:tests.LoginTest@64beebb7]" name="closeApp" is-config="true" duration-ms="723" started-at="2019-08-02T19:17:58Z" finished-at="2019-08-02T19:17:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Success login -->
+  </suite> <!-- Login tests -->
+</testng-results>

@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login tests" parallel="tests" thread-count="6">
+	<test name="Success login">
+		<classes>
+			<class name="tests.LoginTest" />
+		</classes>
+	</test>
+	<test name="Fields velification">
+		<classes>
+			<class name="tests.LoginTest" />
+		</classes>
+	</test>
+	<test name="Sorting functionality">
+		<classes>
+			<class name="tests.LoginTest" />
+		</classes>
+	</test>
+	<test name="Possibility to add product to cart">
+		<classes>
+			<class name="tests.OneProduct" />
+			<class name="tests.ThreeProductsCheckout" />
+		</classes>
+	</test>
+
+</suite>

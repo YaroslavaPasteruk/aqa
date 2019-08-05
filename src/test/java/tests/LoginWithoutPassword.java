@@ -10,31 +10,18 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class LoginWithoutPassword {
-	
-private WebDriver driver = null;
-	
+import pages.LoginPage;
+
+public class LoginWithoutPassword extends GenericTest{
+
 	@Test
 	public void testPasswordCanNotBeEmpty() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers"
-				+ File.separator + "chromedriver_win32" + File.separator + "chromedriver.exe");
-		this.driver = new ChromeDriver();
-		driver.get("https://www.saucedemo.com/");
+		LoginPage emptyPasswordLogin = openLoginPage().fillInUserCredentials("standard_user", "");
 
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("");
-		driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
-		driver.findElement(By.xpath(".//*[text()='Password is required']"));
-		
-		WebElement passwordError = driver.findElement(By.xpath(".//*[text()='Password is required']"));
-		
-		Assert.assertTrue(passwordError.isDisplayed());
-		Assert.assertEquals(passwordError.getText(), "Epic sadface: Password is required");
-	}
-	@AfterClass(alwaysRun = true)
-	public void closeBrowser() {
-		driver.quit();
-	}
+		Assert.assertTrue(emptyPasswordLogin.getErrorMessage().equals("Epic sadface: Password is required"),
+				"Error message for login without password should be 'Epic sadface: Password is required' + but found ["
+						+ emptyPasswordLogin.getErrorMessage() + "] ");
 
+	}
 
 }
